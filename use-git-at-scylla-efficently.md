@@ -14,6 +14,8 @@ section {
 
 # How To Use Git At Scylla Efficiently
 
+no time to long talks
+
 ---
 
 # Goals of our work
@@ -209,4 +211,6 @@ https://jj-vcs.github.io/
 ---
 
 # Thank you!
+
+See you all
 
