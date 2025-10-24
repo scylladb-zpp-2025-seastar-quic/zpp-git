@@ -202,3 +202,7 @@ https://jonas.github.io/tig/
 
 https://jj-vcs.github.io/
 
+---
+
+# Thank you!
+
