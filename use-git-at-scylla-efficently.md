@@ -45,7 +45,8 @@ section {
 
 ```bash
 # create a fork on GitHub first
-$ git clone git@github.com:ewienik/zpp-git-user1.git
+$ git clone git@github.com:ewienik/zpp-git.git
+$ cd zpp-git
 $ git status
 $ git log --oneline
 ```
