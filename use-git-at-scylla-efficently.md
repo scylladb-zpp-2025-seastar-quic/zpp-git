@@ -105,7 +105,7 @@ $ git commit
 $ git log --oneline
 $ git status
 $ tig
-$ git push # current branch
+$ git push --force-with-lease # current branch
 ```
 
 ---
