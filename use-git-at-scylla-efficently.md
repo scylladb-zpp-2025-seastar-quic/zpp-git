@@ -18,6 +18,10 @@ section {
 
 # Goals of our work
 
+---
+
+# Goals of our work
+
 - Implement features
 
 ---
@@ -83,40 +87,38 @@ nothing to commit, working tree clean
 # Create commits
 
 ```bash
-$ sed -i 's/Create commits/Change branch/' use-git-at-scylla-efficently.md
+# edit files
 $ git status
+$ git diff
 $ git add .
-$ git commit -m "Change 'Create commits' slide"
-$ git log --oneline
+$ git add -p
+$ tig
+$ git commit
+# repeat as needed
 ```
 
 ---
 
-# Create commits
+# Push changes
 
 ```bash
-$ sed -i 's/Rebase with master/Sync with master/' use-git-at-scylla-efficently.md
-$ git status
-$ git add .
-$ git commit -m "Change 'Rebase with master' slide"
 $ git log --oneline
-```
-
----
-
-# Create commits
-
-```bash
-$ sed -i 's/Create commits/Change branch/g' use-git-at-scylla-efficently.md
 $ git status
-$ git add .
-$ git commit -m "Change other 'Create commits' slides"
-$ git log --oneline
+$ tig
+$ git push # current branch
 ```
 
 ---
 
 # Rebase with master
+
+```bash
+# two developers working in parallel
+$ git fetch origin
+$ git fetch --all
+$ git rebase origin/feature # not git merge
+# resolve conflicts if any
+```
 
 ---
 
@@ -124,19 +126,77 @@ $ git log --oneline
 
 ---
 
-# Rearrange commits
+# Cleanup before review
+
+- divide commits logically
+
+---
+
+# Cleanup before review
+
+- divide commits logically
+- write good commit messages
+
+---
+
+# Cleanup before review
+
+- divide commits logically
+- write good commit messages
+- commits should be as a story
+
+---
+
+# Rearrange, squash or fix commits
+
+```bash
+$ git log --oneline
+$ tig
+$ git rebase -i origin/feature --keep-base
+# rearrange commits in editor
+```
 
 ---
 
 # Split commits
 
+```bash
+$ git rebase -i origin/feature --keep-base
+# break or edit at some commit to split
+$ git log -1
+$ git reset --soft HEAD~1
+# split staged/not staged changes
+$ git commit -m "part 1"
+$ git add .
+$ git commit -m "part 2"
+```
+
 ---
 
 # Update commits
 
+```bash
+$ git rebase -i origin/feature --keep-base
+# break or edit at some commit to update
+$ git log -1
+$ git status # nothing to commit, working tree clean
+$ git commit --amend # update description
+# add modification
+$ git add .
+$ git commit --amend # update description and content
+$ git log -1
+```
+
 ---
 
-# Push changes
+# Rebase with stacked branches
+
+```bash
+$ git rebase -i origin/feature --keep-base --update-refs
+# move refs to the correct commits
+```
+
+https://www.codetinkerer.com/2023/10/01/stacked-branches-with-vanilla-git.html
 
 ---
 
@@ -144,15 +204,11 @@ $ git log --oneline
 
 ---
 
-# Push changes
-
----
-
 # Tools
 
-```bash
-$ git
-$ tig
-$ jj
-```
+https://git-scm.com/
+
+https://jonas.github.io/tig/
+
+https://jj-vcs.github.io/
 

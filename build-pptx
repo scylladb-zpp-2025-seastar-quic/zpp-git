@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+marp --allow-local-files --pptx "$@"
