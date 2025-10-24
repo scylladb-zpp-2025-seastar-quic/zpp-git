@@ -44,15 +44,10 @@ section {
 # Clone repository
 
 ```bash
-$ git clone git@github.com:ewienik/zpp-git.git
+# create a fork on GitHub first
+$ git clone git@github.com:ewienik/zpp-git-user1.git
 $ git status
-On branch master
-Your branch is up to date with 'origin/master'.
-
-nothing to commit, working tree clean
 $ git log --oneline
-8d7ec69 (HEAD -> master, origin/master, origin/feature, origin/HEAD) Prepare initial marp presentation
-e4a1d03 Initial commit
 ```
 
 ---
@@ -61,13 +56,7 @@ e4a1d03 Initial commit
 
 ```bash
 $ git switch feature
-branch 'feature' set up to track 'origin/feature'.
-Switched to a new branch 'feature'
 $ git status
-On branch feature
-Your branch is up to date with 'origin/feature'.
-
-nothing to commit, working tree clean
 ```
 
 ---
@@ -76,10 +65,7 @@ nothing to commit, working tree clean
 
 ```bash
 $ git switch -c change-docs
-Switched to a new branch 'change-docs'
 $ git status
-On branch change-docs
-nothing to commit, working tree clean
 ```
 
 ---
@@ -105,7 +91,10 @@ $ git commit
 $ git log --oneline
 $ git status
 $ tig
-$ git push --force-with-lease # current branch
+# create a new branch
+$ git push --set-upstream origin change-docs
+# update existing branch
+$ git push --force-with-lease
 ```
 
 ---
