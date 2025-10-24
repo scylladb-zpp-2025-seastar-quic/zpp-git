@@ -58,6 +58,7 @@ $ git log --oneline
 ```bash
 $ git switch feature
 $ git status
+$ git log --oneline
 ```
 
 ---
